@@ -2,6 +2,7 @@
 x = 0
 car = "-"
 while True:
+    print("Frase:")
     frase = input().split()
     tamanho = []
     if frase == ['0']:
