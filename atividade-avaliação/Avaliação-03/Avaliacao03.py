@@ -7,18 +7,25 @@ def primo(p):
         return True
     else:
         return False
-  
-def somaPrimo(n):
-    soma = 0 
+
+def somaPrimos(n): #n = 3
     contador = 0
-    for i in range(1,n+1):
-        if primo(i) == True:
-            soma = soma + i
-            contador = contador+1
+    num = 2
+    soma = 0
+    primos = []
+    while True:
+        if primo(num):
+            contador = contador + 1
+            soma = soma + num
+            primos.append(num)
+        num = num + 1
         if contador == n:
             break
-    return soma    
+    return (soma,primos)
 
+
+print("Informe um número inteiro não negativo:")
 num = input()
-
-print(somaPrimo(num))            
+soma, parcela = somaPrimos(int(num))
+if int(num) >= 0:
+    print("Para n = {0}, resultado {s} = {p}. ".format(int(num),s = soma,p = parcela))
